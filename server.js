@@ -24,6 +24,20 @@ app.get('/api/authors', (req, res) => {
     });
 });
 
+app.post('/api/authors', (req, res) => {
+    const { name, year_of_birth } = req.body;
+    if(!name || !year_of_birth) {
+        return res.status(400).json({ error: 'Name and year of birth are required' });
+    }
+    Authors.create({ name, year_of_birth })
+    .then((author) => {
+        res.status(201).json(author);
+    })
+    .catch((error) => {
+        res.status(500).json({ error: 'Unable to create author' });
+    });
+});
+
 app.get('/api/books', (req, res) => {
     Books.findAll({
         include: [
