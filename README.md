@@ -121,9 +121,6 @@ These are the npm packages the backend uses (see `package.json`):
 - **“password authentication failed”**  
   Check `DB_USER` and `DB_PASSWORD`; they must match your PostgreSQL user.
 
-- **Frontend is blank or “Unable to fetch”**  
-  Make sure the server is running and you open [http://localhost:3000/](http://localhost:3000/) (not the file path). If you use `frontend_external.html` from another origin, the server must allow CORS (the app already uses the `cors` package).
-
 ---
 
 ## Tasks
