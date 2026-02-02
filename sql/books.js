@@ -29,8 +29,10 @@ const Books = sequelize.define('Books', {
         },
     },
 }, {
-    tableName: 'Books',
+    tableName: 'books',
     timestamps: true,
+    createdAt: 'createdat',
+    updatedAt: 'updatedat'
 });
 
 Books.belongsTo(Authors, { foreignKey: 'author_id', onDelete: 'CASCADE' });

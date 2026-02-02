@@ -16,8 +16,10 @@ const Authors = sequelize.define('Authors', {
         allowNull: false,
     },
 }, {
-    tableName: 'Authors',
+    tableName: 'authors',  // ← Ändrat från 'Authors' till 'authors'
     timestamps: true,
+    createdAt: 'createdat',  // ← Lägg till dessa
+    updatedAt: 'updatedat'   // ← för att matcha din databas
 });
 
 module.exports = Authors;
